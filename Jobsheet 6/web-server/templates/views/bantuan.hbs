@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  {{>head}}
+  <body>
+    <div class="main-content">
+      {{>header}}
+      <h2>FAQ (Frequently Asked Questions)</h2>
+      <p>Ini halaman bantuan (FAQ)</p>
+
+      <div class="faq-container">
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>1. Bagaimana cara menggunakan aplikasi ini?</span>
+            <span class="arrow">▶</span>
+          </button>
+          <div class="faq-answer">
+            <p>Masukkan nama kota atau lokasi pada kolom pencarian, lalu klik tombol <b>Cari Lokasi</b>. Informasi cuaca akan muncul otomatis.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>2. Apakah aplikasi ini membutuhkan koneksi internet?</span>
+            <span class="arrow">▶</span>
+          </button>
+          <div class="faq-answer">
+            <p>Ya. Aplikasi memerlukan koneksi internet untuk mengambil data cuaca dari API.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>3. Dari mana data cuaca diperoleh?</span>
+            <span class="arrow">▶</span>
+          </button>
+          <div class="faq-answer">
+            <p>Data diperoleh dari layanan API publik seperti <i>WeatherStack</i> atau <i>OpenWeatherMap</i>.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>4. Apakah aplikasi ini gratis digunakan?</span>
+            <span class="arrow">▶</span>
+          </button>
+          <div class="faq-answer">
+            <p>Ya, aplikasi ini bersifat gratis dan dibuat untuk tujuan pembelajaran.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {{>footer}}
+    <script src="/js/faq.js"></script>
+  </body>
+</html>
