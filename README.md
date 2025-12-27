@@ -164,6 +164,41 @@ request({ url: mapboxURL, json: true }, (error, response) => {
 
 ---
 
+### ✅ Jobsheet 4 - JavaScript Essentials
+
+**Pendahuluan:** Jobsheet ini membahas dasar-dasar JavaScript yang esensial untuk pengembangan aplikasi web dan Node.js: tipe data, variabel (`var`/`let`/`const`), scope & hoisting, fungsi (termasuk closure), array & objek, serta fitur ES6+ seperti arrow functions, template literals, destructuring, spread/rest, classes, dan modules. Bagian penting lain adalah asinkronitas (callbacks, Promises, async/await) yang sering dipakai untuk I/O dan API.
+
+**Tujuan:** Mahasiswa memahami pola pemrograman JavaScript modern, mampu menulis fungsi yang bersih, memahami closure & scope, dan menangani alur asinkron dengan benar.
+
+**Bagaimana cara kerjanya (ringkas):**
+- Variabel & scope: gunakan `let`/`const` untuk menghindari perilaku hoisting yang tidak diinginkan.
+- Fungsi & closure: fungsi dapat 'menangkap' variabel dari lingkungan luar; pahami implikasinya.
+- Async: gunakan `async/await` untuk alur Promise yang lebih mudah dibaca.
+
+**Contoh singkat:**
+```js
+// Arrow + async/await + destructuring
+const fetchData = async (url) => {
+  const res = await fetch(url)
+  const { data } = await res.json()
+  return data
+}
+```
+
+**Bagian penting & fungsinya:**
+- Latihan berisi implementasi fungsi murni, manipulasi array (map/filter/reduce), serta konversi callback → Promise → async/await.
+
+**Tips & best-practices:**
+- Gunakan `const` bila tidak perlu diubah; `let` bila perlu diubah; hindari `var`.
+- Favor `async/await` atas callback nesting.
+- Gunakan ESLint dan Prettier untuk konsistensi kode.
+
+**Contoh penggunaan & uji cepat:**
+- Jalankan file latihan dengan `node` dan periksa output console.
+- Buat test sederhana (mis. dengan `assert`) untuk fungsi murni.
+
+---
+
 ### ✅ Jobsheet 5 - Web Server and ExpressJs
 
 **Pendahuluan:** Jobsheet ini membawa Anda dari server Node.js dasar ke penggunaan framework populer — Express — yang menyederhanakan pembuatan aplikasi web. Anda akan melihat bagaimana routes, template engine, dan file statis bekerja sama untuk menyajikan halaman web dinamis yang ramah pengguna.
@@ -296,6 +331,32 @@ module.exports = forecast
   ```json
   {"data":{"lokasi":"Padang, Indonesia","prediksi":{"temperature":28,"precip":0,"description":"Sunny"}},"error":null}
   ```
+
+---
+
+### ✅ Jobsheet 7 - Version Control, Git and App Deployment
+
+**Pendahuluan:** Jobsheet ini mengajarkan kontrol versi dengan Git (init, add, commit, branch, merge), penggunaan remote (GitHub/GitLab), serta proses deploy aplikasi ke platform seperti Vercel untuk continuous deployment.
+
+**Tujuan:** Mahasiswa memahami workflow Git dasar, membuat branch untuk fitur/bugfix, melakukan PR/merge, dan melakukan deployment otomatis ke Vercel dari repository Git.
+
+**Bagaimana cara kerjanya (ringkas):**
+- Git: commit sering dengan pesan jelas, gunakan branch untuk pengembangan, lakukan review sebelum merge.
+- Vercel: hubungkan repo GitHub/GitLab/Bitbucket, atur build command dan output directory; setiap push memicu build & deploy otomatis.
+
+**Catatan Vercel (Anda dideploy menggunakan Vercel):**
+- Pastikan build command (`npm run build` atau `npm install && npm run build`) dan output folder (mis. `public` atau `build`) dikonfigurasi di dashboard Vercel.
+- Set environment variables (API keys, dsb.) melalui Vercel Dashboard → Settings → Environment Variables.
+- Vercel membuat Preview Deploy untuk setiap PR dan Production Deploy saat push ke branch utama.
+- Pantau log build & deployment di Dashboard Vercel untuk debug; ganti `<VERCEL_URL>` dengan URL hasil deploy Anda bila ingin menautkannya di README.
+
+**Contoh cepat (Git → Vercel):**
+```bash
+git add .
+git commit -m "Menambahkan fitur X"
+git push origin main
+```
+- Vercel otomatis membuild & deploy; cek hasil di dashboard Vercel atau gunakan `vercel` CLI untuk kontrol lebih lanjut.
 
 ---
 
